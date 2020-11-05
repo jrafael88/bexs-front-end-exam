@@ -1,0 +1,72 @@
+@import '../../../Styles/variables.scss';
+
+.shopping-cart {
+  background-color: $fourth-color;
+  position: relative;
+  width: 327px;
+  height: 285px;
+  margin-left: 15px;
+  padding: 52px 20px;
+
+  &__title {
+    display: block;
+    width: 85%;
+    height: 18px;
+    margin: 0 0 50px;
+    background: $fifth-color;
+    border-radius: 5px;
+    opacity: 1;
+    &:after {
+      content: "";
+      position: absolute;
+      top: 95px;
+      height: 1px;
+      width: calc(100% - 40px);
+      border-bottom: 1px solid $third-color;
+    }
+  }
+
+  &__item {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: 12px;
+    margin: 0 0 10px;
+
+    &:before {
+      content: "";
+      width: 75%;
+      height: 12px;
+      display: inline-block;
+      background: $fifth-color;
+      border-radius: 5px;
+    }
+
+    &:after {
+      content: "";
+      width: 15%;
+      height: 12px;
+      display: inline-block;
+      background: $fifth-color;
+      border-radius: 5px;
+    }
+  }
+
+  &__count {
+    @extend .shopping-cart__item;
+    padding-top: 15px;
+    margin-top: 15px;
+    border-top: 1px solid $third-color;
+
+    &:before,
+    &:after {
+      background-color: $third-color;
+    }
+  }
+}
+
+@media only screen and (max-width: 1320px) {
+  .shopping-cart {
+    display: none;
+  }
+}

@@ -1,6 +1,7 @@
 import React from "react";
 import HeaderComponent from "../Components/HeaderComponent/HeaderComponent";
 import BoxCardComponent from "../Components/BoxCardComponent/BoxCardComponent";
+import ShoppingCart from "../Components/ShoppingCart/ShoppingCart";
 
 import "./Cart.scss";
 
@@ -30,6 +31,7 @@ class Cart extends React.Component {
               form={this.state.formControls}
             />
           </div>
+          <ShoppingCart />
         </div>
       </div>
     );
