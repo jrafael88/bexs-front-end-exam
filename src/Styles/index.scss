@@ -1,0 +1,31 @@
+@import './variables.scss';
+
+* {
+  margin: 0;
+  padding: 0;
+  border: none;
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  margin: 0;
+  font-family: verdana;
+  font-size: 13px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+  background-color: $fifth-color;
+}
+
+@media only screen and (min-width: 736px) {
+  .d-sm-block {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 736px) {
+  .d-sm-none {
+    display: none!important;
+  }
+}

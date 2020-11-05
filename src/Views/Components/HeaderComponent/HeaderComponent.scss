@@ -1,0 +1,46 @@
+@import '../../../Styles/variables.scss';
+
+.header {
+  width: 100%;
+  height: 121px;
+  margin-bottom: 65px;
+  background-color: $fourth-color;
+  border-bottom: 1px solid $seventh-color;
+  display: flex;
+
+  &__center {
+    max-width: 1366px;
+    width: 95%;
+    margin: auto;
+    display: flex;
+    align-items: center;
+  }
+
+  &__logo {
+    width: 260px;
+  }
+
+  &__nav {
+    display: flex;
+    margin-left: auto;
+
+    &--item {
+      width: 100px;
+      height: 18px;
+      border-radius: 5px;
+      background-color: $eighth-color;
+      list-style-type: none;
+      cursor: pointer;
+
+      &:not(:last-child) {
+        margin-right: 35px;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 990px) {
+  .header {
+    display: none;
+  }
+}
