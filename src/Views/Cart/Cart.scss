@@ -1,0 +1,46 @@
+@import '../../Styles/variables.scss';
+
+.content {
+  background-color: $fourth-color;
+  max-width: 1024px;
+}
+
+@media only screen and (min-width: 1000px) {
+  .container {
+    max-width: 1366px;
+    width: 95%;
+    margin: auto;
+    display: flex;
+  }
+
+  .content {
+    margin: auto;
+    width: 95%;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .section-form {
+    margin-right: 64px;
+    width: 440px;
+  }
+}
+
+
+@media only screen and (max-width: 1000px) {
+  .content {
+    min-height: 100vh;
+    padding-bottom: 20px;
+  }
+
+  .section-form {
+    margin: 30px auto 0;
+    max-width: 80%;
+  }
+}
+
+@media only screen and (max-width: 736px) {
+  .section-form {
+    max-width: 280px;
+  }
+}

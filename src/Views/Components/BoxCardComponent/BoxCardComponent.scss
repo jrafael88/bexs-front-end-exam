@@ -1,0 +1,260 @@
+@import '../../../Styles/variables.scss';
+
+.box-card {
+  position: relative;
+  &__content {
+    position: relative;
+    z-index: 1;
+  }
+
+  &:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: $primary-color;
+  }
+}
+
+.title {
+  h1 {
+    font-size: 20px;
+    font-weight: bold;
+    text-align: left;
+    letter-spacing: -0.01px;
+    letter-spacing: -0.4px;
+    color: $fourth-color;
+    opacity: 1;
+    display: flex;
+  }
+
+  &__icon {
+    width: 50px;
+    margin-right: 15px;
+  }
+}
+
+.change-payment {
+  font-size: 13px;
+  margin-bottom: 54px;
+  color: $fourth-color;
+  display: flex;
+  align-items: center;
+
+  &__arrow {
+    position: relative;
+    width: 8px;
+    height: 14px;
+    margin-right: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+
+    &::before {
+      content: "";
+      position: absolute;
+      padding: 5px;
+      box-shadow: 1px -1px 0 1px $fourth-color inset;
+      -webkit-box-shadow: 2px -2px $fourth-color inset;
+      border: solid transparent;
+      border-width: 0 0 2rem 2rem;
+      transition: 0.2s;
+      transform: rotate(45deg);
+    }
+  }
+}
+
+.credit-card {
+  cursor: pointer;
+  width: 364px;
+  height: 224px;
+  margin-top: 31px;
+  position: relative;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+  border-radius: 15px;
+
+  &:hover {
+    transform: rotateY(180deg);
+  }
+  &__rotate {
+    @extend :hover;
+  }
+
+  &__flip {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 224px;
+    transition: 0.6s;
+    border-radius: 15px;
+    background-size: cover;
+    backface-visibility: hidden;
+    transform-style: preserve-3d;
+    box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.3);
+  }
+
+  &__front {
+    background-image: url('../../../images/front-of-card-grey.svg');
+    padding: 35px 33px 35px 26px;
+    z-index: 2;
+    transform: rotateY(0deg);
+
+    &--flag {
+      width: 69px;
+      height: 23px;
+      margin-bottom: 40px;
+    }
+
+    &--number {
+      font: Regular 22px/28px SF Pro Text;
+      font-size: 22px;
+      letter-spacing: 2.2px;
+      color: $fourth-color;
+      text-shadow: 0px 1px 2px #000000B3;
+    }
+
+    &--bottom {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 34px;
+    }
+
+    &--name {
+      font: Regular 16px/27px SF Pro Text;
+      font-size: 16px;
+      letter-spacing: 0px;
+      color: $fourth-color;
+      text-shadow: 0px 1px 2px #000000B3;
+      text-transform: uppercase;
+    }
+
+    &--validity {
+      @extend .credit-card__front--name;
+    }
+  }
+
+  &__back {
+    padding: 35px 33px 35px 26px;
+    background-image: url('../../../images/back-of-card-grey.svg');
+    transform: rotateY(180deg);
+
+    &--code {
+      position: absolute;
+      top: 110px;
+      left: 185px;
+      font: Regular 19px/28px SF Pro Text;
+      letter-spacing: -0.57px;
+      color: $secondary-color;
+    }
+  }
+}
+
+@media only screen and (min-width: 990px) {
+  .box-card {
+    width: 352px;
+    height: 596px;
+    padding: 54px 0 0 68px;
+  }
+}
+
+@media only screen and (max-width: 990px) {
+  .box-card {
+    padding: 40px 0 0 0;
+
+    &__content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    &:before {
+      height: 325px;
+    }
+  }
+
+  .change-payment {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+
+    &__arrow {
+      position: absolute;
+      left: 15px;
+    }
+  }
+}
+
+@media only screen and (max-width: 736px) {
+  .box-card {
+    &:before {
+      height: 239px;
+    }
+  }
+
+  .change-payment {
+    margin-bottom: 30px;
+
+    &__arrow {
+      width: 12px;
+      height: 20px;
+
+      &::before {
+        padding: 8px;
+      }
+    }
+  }
+
+  .title {
+    h1 {
+      font-size: 16px;
+    }
+
+    &__icon {
+      width: 40px;
+    }
+  }
+
+  .credit-card {
+    width: 280px;
+    height: 172px;
+    margin-top: 16px;
+
+    &__flip {
+      height: 172px;
+    }
+
+    &__front {
+      padding: 27px 14px;
+
+      &--flag {
+        margin-bottom: 28px;
+        width: 53px;
+        height: 18px;
+      }
+
+      &--number {
+        font-size: 19px;
+        letter-spacing: 1.52px;
+      }
+
+      &--bottom {
+        margin-top: 27px;
+      }
+
+      &--name {
+        font-size: 12px;
+      }
+    }
+
+    &__back {
+      &--code {
+        top: 83px;
+        left: 140px;
+      }
+    }
+  }
+}
