@@ -1,0 +1,38 @@
+.btn {
+  min-width: 246px;
+  height: 51px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 17px;
+  font-weight: 500;
+  text-transform: uppercase;
+  transition: all .5s ease-in-out;
+  outline: none;
+
+  &__stroke {
+    border: 1px solid $primary-color;
+    color: $primary-color;
+
+    &:hover {
+      background-color: $primary-color;
+      color: $fourth-color;
+    }
+  }
+
+  &__red {
+    border: 1px solid $primary-color;
+    color: $fourth-color;
+    background-color: $primary-color;
+
+    &:hover {
+      background-color: $fourth-color;
+      color: $primary-color;
+    }
+  }
+}
+
+@media only screen and (max-width: 736px) {
+  .btn {
+    width: 100%;
+  }
+}

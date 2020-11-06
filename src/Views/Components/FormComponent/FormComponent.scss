@@ -1,0 +1,27 @@
+@import '../../../Styles/variables.scss';
+
+.form {
+  display: flex;
+  flex-direction: column;
+
+  .btn {
+    margin: 30px 0 0 auto;
+  }
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+
+  .form-field:nth-child(even) {
+    margin-left: 16px;
+  }
+}
+
+@media only screen and (max-width: 736px) {
+  .form {
+    .btn {
+      margin: 20px 0 0;
+    }
+  }
+}
